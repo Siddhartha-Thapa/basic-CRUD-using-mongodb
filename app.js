@@ -11,9 +11,9 @@ app.get('/create', async(req, res)=>{
         username: "kamal123",
         email: "kamal@gmail.com"
     
-    });
+    })
     res.send(createduser);
-});
+})
 
 
 app.listen("3000");
