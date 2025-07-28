@@ -14,22 +14,22 @@ app.get('/create', async(req, res)=>{
     res.send(createduser);
 })
 
-// app.get('/update', async(req, res)=>{
-//     let updateduser = await usermodel.findOneAndUpdate(
-//         {
-//             username: "kamal123"
-//         },
-//         {
-//             name: "siddhartha thapa",
-//             username: "siddhartha123",
-//             email: "sid@gmail.com"
-//         },
-//         {
-//             new: true
-//         }
-//     )
-//     res.send(updateduser);
-// })
+app.get('/update', async(req, res)=>{
+    let updateduser = await usermodel.findOneAndUpdate(
+        {
+            username: "kamal123"
+        },
+        {
+            name: "siddhartha thapa",
+            username: "siddhartha123",
+            email: "sid@gmail.com"
+        },
+        {
+            new: true
+        }
+    )
+    res.send(updateduser);
+})
 
 app.get("/read", async(req, res)=>{
     let users = await usermodel.find();
