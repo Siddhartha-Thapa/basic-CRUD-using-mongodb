@@ -10,10 +10,25 @@ app.get('/create', async(req, res)=>{
         name: "Kamal",
         username: "kamal123",
         email: "kamal@gmail.com"
-    
     })
     res.send(createduser);
 })
 
+app.get('/update', async(req, res)=>{
+    let updateduser = await usermodel.findOneAndUpdate(
+        {
+            username: "kamal123"
+        },
+        {
+            name: "siddhartha thapa",
+            username: "siddhartha123",
+            email: "sid@gmail.com"
+        },
+        {
+            new: true
+        }
+    )
+    res.send(updateduser);
+})
 
 app.listen("3000");
